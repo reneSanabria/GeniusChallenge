@@ -24,8 +24,6 @@ public class AddUserActivity  extends AppCompatActivity {
     EditText lastName;
     Button btnSave;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

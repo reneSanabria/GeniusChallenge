@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.test.geniuschallenge.adapters.UserListAdapter;
 import com.test.geniuschallenge.models.User;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<UsersResponse> call, Throwable t) {
+                linlaHeaderProgress.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this, "Unable to retreat list of Users", Toast.LENGTH_LONG).show();
                 Log.e("ERROR: ", t.getMessage());
             }
         });
@@ -76,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_add_user:
                 Intent intent = new Intent(MainActivity.this, AddUserActivity.class);
-                intent.putExtra("user_name", "");
                 startActivity(intent);
                 break;
             default:

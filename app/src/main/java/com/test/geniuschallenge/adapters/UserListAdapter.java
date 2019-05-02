@@ -30,7 +30,6 @@ public class UserListAdapter extends ArrayAdapter<User> {
 
     @Override
     public View getView(final int pos, View view, ViewGroup parent){
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if(view==null)
         {
             view=LayoutInflater.from(context).inflate(R.layout.single_user_layout,parent,false);
